@@ -51,6 +51,10 @@ function blackjack(){
             resultadoJugador.textContent = "Jugador: " + puntuacionJugador;
             resultadoCasa.textContent = "Casa: " + puntuacionCrupier;
             mensaje.textContent = "¡Has perdido!";       
+        }else if(puntuacionJugador === puntuacionCrupier){
+            resultadoJugador.textContent = "Jugador: " + puntuacionJugador;
+            resultadoCasa.textContent = "Casa: " + puntuacionCrupier;
+            mensaje.textContent = "¡Empate!";  
         }
     })
 }
