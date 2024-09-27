@@ -22,9 +22,11 @@ function blackjack(){
     pedirOtra.addEventListener("click", function(){
         if(puntuacionJugador < 21){
             puntos.textContent = puntuacionJugador += generarCarta();
+        }else if(puntuacionJugador === 21){
+            mensaje.textContent = "¡Has ganado!";
         }else{
             resultadoJugador.textContent = "Jugador: " + puntuacionJugador;
-            mensaje.textContent = "Has perdido!";  
+            mensaje.textContent = "¡Has perdido!";  
         }
     });
 
