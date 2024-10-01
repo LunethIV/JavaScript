@@ -15,18 +15,19 @@ function blackjack(){
     const puntos = document.getElementById("puntos");
     puntos.textContent = puntuacionJugador;
 
-    const preguntaOtra = document.getElementById("preguntaOtra");
-    preguntaOtra.textContent = "¿Quieres otra carta?";
-
     const pedirOtra = document.getElementById("pedirOtra");
     pedirOtra.addEventListener("click", function(){
         if(puntuacionJugador < 21){
             puntos.textContent = puntuacionJugador += generarCarta();
         }else if(puntuacionJugador === 21){
-            mensaje.textContent = "¡Has ganado!";
+            mensaje.textContent = "¡Tienes 21! ¡Has ganado!";
+            pedirOtra.disabled = true;
+            plantarse.disabled = true;
         }else{
             resultadoJugador.textContent = "Jugador: " + puntuacionJugador;
-            mensaje.textContent = "¡Has perdido!";  
+            mensaje.textContent = "¡Te has pasado de 21! ¡Has perdido!";
+            pedirOtra.disabled = true;
+            plantarse.disabled = true;
         }
     });
 
@@ -58,6 +59,20 @@ function blackjack(){
             resultadoCasa.textContent = "Casa: " + puntuacionCrupier;
             mensaje.textContent = "¡Empate!";  
         }
+
+        pedirOtra.disabled = true;
+        plantarse.disabled = true;
+    })
+
+    const reiniciar = document.getElementById("reiniciar");
+    reiniciar.addEventListener("click", function(){
+        puntuacionJugador = generarCarta();
+        puntos.textContent = puntuacionJugador;
+        pedirOtra.disabled = false;
+        plantarse.disabled = false;
+        resultadoJugador.textContent = "";
+        resultadoCasa.textContent = "";
+        mensaje.textContent = "";
     })
 }
 blackjack();

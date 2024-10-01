@@ -6,15 +6,40 @@
     <title>Blackjack</title>
     <script defer src="script_ej4.js"></script>
 </head>
+
+<style>
+    body{
+        background-color: rgb(186, 228, 210);
+    }
+
+    div{
+        text-align: center;
+    }
+
+    button{
+        background-color: orange;
+        margin-right: 10px;
+    }
+
+    label{
+        background-color: rgb(230, 231, 133);
+    }
+</style>
+
 <body>
-    <h1>Ejercicio 4</h1>
-    <p>Tu carta inicial:</p>
-    <p id="puntos"></p>
-    <p id="preguntaOtra"></p>
-    <button id="pedirOtra">Pedir</button>
-    <button id="plantarse">Plantarse</button>
-    <p id="resultadoJugador"></p>
-    <p id="resultadoCasa"></p>
-    <p id="mensaje"></p>
+    <div>
+        <h1>Ejercicio 4: Blackjack</h1>
+        <hr color="orange" size="5" width="70%">
+        <h3>Tu carta inicial:</h3>
+        <h3 id="puntos"></h3>
+        <h3>¿Qué quieres hacer?</h3>
+        <button id="pedirOtra">Pedir otra carta</button>
+        <button id="plantarse">Plantarse</button>
+        <button id="reiniciar">Reiniciar</button>
+        <p id="resultadoJugador"></p>
+        <p id="resultadoCasa"></p>
+        <p id="mensaje"></p>
+    </div>
+
 </body>
 </html>
